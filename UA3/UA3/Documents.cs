@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace UA3
 {
-    internal class Documents
+    internal abstract class  Documents : Iresume
     {
         public string Titre {  get; set; }
         public string Resume { get; set; }
@@ -16,14 +16,32 @@ namespace UA3
         public int NumeroCase { get; set; }
         public string Etagere { get; set; }
 
-        public Documents(string titr, string resume, int code, double prix, string dateDexpedition)
+        public Documents(string titre, string resume, int code, double prix, string dateDexpedition)
         {
-            Titre = titr;
+            Titre = titre;
             Resume = resume;
             Code = code;
             Prix = prix;
             DateDexpedition = dateDexpedition;
          }
 
+        public override string ToString()
+        {
+            return "Titre : " + Titre + "\n" +
+                "Code : " + Code + "\n" +
+                "Prix : " + Prix + "\n" +
+                "Date dexpedition : " + DateDexpedition;
+        }
+
+        public override bool Equals(object? obj)
+        {
+            return base.Equals(obj);
+        }
+
+        public abstract void  Emplacement();
+        public abstract bool Disponibilite();
+
+        public abstract void AfficheResume();
+        
     }
 }
