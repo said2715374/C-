@@ -8,5 +8,6 @@ namespace UA3
 {
     internal interface Iresume
     {
+        void AfficheResume();
     }
 }
