@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace UA3
 {
-    internal class Magasines : Documents , Iresume
+    internal class Magasines : Documents, Iresume
     {
+        public void AfficheResume()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
