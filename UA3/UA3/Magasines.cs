@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace UA3
 {
-    internal class Magasines
+    internal class Magasines : Documents , Iresume
     {
     }
 }
