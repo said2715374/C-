@@ -6,19 +6,28 @@ using System.Threading.Tasks;
 
 namespace UA3
 {
-    internal class Livres : Documents, Iresume
+    internal class Livres : Documents
     {
+       
 
+        public string Auteur {  get; set; }
+        public int NumbreDePage { get; set; }
+
+        public Livres(string titre, string resume, int code, double prix, string dateDexpedition, string etager, int Case, string auteur, int numbreDePage) : base(titre, resume, code, prix, dateDexpedition)
+        {
+            this.NumeroCase = Case;
+            this.Etagere = etager;
+            Auteur = auteur;
+            NumbreDePage = numbreDePage;
+        }
 
 
         public override string ToString()
         {
-            return base.ToString();
+            return base.ToString()+"Auteur : "+Auteur+"\n"+
+                                    "Nombre de page : "+NumbreDePage;
         }
-        public void AfficheResume()
-        {
-            throw new NotImplementedException();
-        }
+        
 
         public override bool Disponibilite()
         {
@@ -26,6 +35,11 @@ namespace UA3
         }
 
         public override void Emplacement()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void AfficheResume()
         {
             throw new NotImplementedException();
         }
