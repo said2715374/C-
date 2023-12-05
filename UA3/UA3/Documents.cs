@@ -50,12 +50,20 @@ namespace UA3
            Prix == otherDocument.Prix &&
            DateDexpedition == otherDocument.DateDexpedition;
         }
-    
 
-        public abstract void  Emplacement();
+
+        public  void Emplacement()
+        {
+            Console.WriteLine("Votre livre est dans :" + "\n" +
+                               "L'étager :" + Etagere + "\n" +
+                               "Numéro de case : " + NumeroCase);
+        }
         public abstract bool Disponibilite();
 
-        public abstract void AfficheResume();
+        public  void AfficheResume()
+        {
+            Console.WriteLine("Voici un resumé du votre livre : " + "\n" + Resume);
+        }
         
     }
 }

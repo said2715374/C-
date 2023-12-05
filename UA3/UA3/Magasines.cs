@@ -18,8 +18,8 @@ namespace UA3
         {
             this.NumeroCase = Case;
             this.Etagere = etager;
-            this.Categories = categories;
-            this.Article = article;
+            Categories = categories;
+            Article = article;
         }
 
         public override string ToString()
@@ -28,19 +28,17 @@ namespace UA3
                                     "Article : "+Article;
         }
 
-        public override void AfficheResume()
-        {
-            throw new NotImplementedException();
-        }
+      
 
         public override bool Disponibilite()
         {
             throw new NotImplementedException();
         }
 
-        public override void Emplacement()
+        
+        public override bool Equals(object? obj)
         {
-            throw new NotImplementedException();
+            return base.Equals(obj);
         }
     }
 }

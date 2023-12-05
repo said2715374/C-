@@ -27,19 +27,13 @@ namespace UA3
                                     "Langue Original : "+LangueOriginal;
         }
 
-        public override void AfficheResume()
-        {
-            throw new NotImplementedException();
-        }
+       
 
         public override bool Disponibilite()
         {
             throw new NotImplementedException();
         }
 
-        public override void Emplacement()
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }

@@ -48,16 +48,8 @@ namespace UA3
             throw new NotImplementedException();
         }
 
-        public override void Emplacement()
-        {
-            Console.WriteLine("Votre livre est dans :" + "\n" +
-                               "L'étager :" + Etagere + "\n" +
-                               "Numéro de case : " + NumeroCase);
-        }
+        
 
-        public override void AfficheResume()
-        {
-            Console.WriteLine("Voici un resumé du votre livre : "+"\n"+Resume);
-        }
+       
     }
 }
