@@ -34,9 +34,23 @@ namespace UA3
         }
 
         public override bool Equals(object? obj)
-        {
-            return base.Equals(obj);
+        {// Vérifiez si l'objet passé n'est pas null et est du même type que cette instance
+            if (obj == null || GetType() != obj.GetType())
+            {
+                return false;
+            }
+
+            // Convertissez l'objet passé en instance de Documents pour pouvoir comparer les propriétés
+            Documents otherDocument = (Documents)obj;
+
+            // Comparez les valeurs des propriétés pour déterminer l'égalité
+            return Titre == otherDocument.Titre &&
+           Resume == otherDocument.Resume &&
+           Code == otherDocument.Code &&
+           Prix == otherDocument.Prix &&
+           DateDexpedition == otherDocument.DateDexpedition;
         }
+    
 
         public abstract void  Emplacement();
         public abstract bool Disponibilite();
