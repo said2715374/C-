@@ -12,13 +12,14 @@ namespace UA3
 
         public string Auteur {  get; set; }
         public int NumbreDePage { get; set; }
-
+        public List<string> chapitres = new List<string>();
         public Livres(string titre, string resume, int code, double prix, string dateDexpedition, string etager, int Case, string auteur, int numbreDePage) : base(titre, resume, code, prix, dateDexpedition)
         {
             this.NumeroCase = Case;
             this.Etagere = etager;
             Auteur = auteur;
             NumbreDePage = numbreDePage;
+            this.Disponible = 1;
         }
 
 
@@ -42,14 +43,19 @@ namespace UA3
                     Auteur == otherLivres.Auteur &&
                     NumbreDePage == otherLivres.NumbreDePage ;
         }
-        
-        public override bool Disponibilite()
+
+        public void AjouterChapitre(string chapitre)
         {
-            throw new NotImplementedException();
+            chapitres.Add(chapitre);
         }
 
-        
+        public List<string> GetChapitres()
+    {
+            return chapitres;
+        }
 
-       
+
+
+
     }
 }

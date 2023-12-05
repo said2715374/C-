@@ -13,6 +13,7 @@ namespace UA3
             public string Nom { get; set; }
             public string Prenom { get; set; }
             public DateTime DateEmprunt { get; set; }
+            private List<Avis> avis = new List<Avis>();
 
             public Client(string nom, string prenom, DateTime dateEmprunt)
             {
@@ -22,12 +23,27 @@ namespace UA3
             }
             public override string ToString()
             {
-                return base.ToString();
+                return "Nom : "+Nom+"\n"+
+                        "Prenom"+Prenom+"\n"+
+                        "Date de l'emprunt"+DateEmprunt;
             }
 
             public override bool Equals(object? obj)
             {
-                return base.Equals(obj);
+                if (obj == null || GetType() != obj.GetType())
+                {
+                    return false;
+                }
+                Client otherClients = (Client)obj;
+
+                return Nom == otherClients.Nom &&
+                        Prenom == otherClients.Prenom &&
+                        DateEmprunt == otherClients.DateEmprunt;
+            }
+
+            public void AjouterAvis(string commentaire, int note)
+            {
+                avis.Add(new Avis(commentaire, note));
             }
 
 

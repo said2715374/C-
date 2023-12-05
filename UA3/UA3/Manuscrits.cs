@@ -12,6 +12,7 @@ namespace UA3
 
         public string Auteur {  get; set; }
         public string LangueOriginal { get; set; }
+        public List<string> languesTraduction = new List<string>();
 
         public Manuscrits(string titre, string resume, int code, double prix, string dateDexpedition, string etager, int Case, string auteur, string langueOriginal) : base(titre, resume, code, prix, dateDexpedition)
         {
@@ -19,6 +20,7 @@ namespace UA3
             this.Etagere = etager;
             this.Auteur = auteur;
             this.LangueOriginal = langueOriginal;
+            this.Disponible = 1;
         }
 
         public override string ToString()
@@ -26,14 +28,20 @@ namespace UA3
             return base.ToString()+"Auteur : "+Auteur+"\n"+
                                     "Langue Original : "+LangueOriginal;
         }
-
-       
-
-        public override bool Disponibilite()
+        public override bool Equals(object? obj)
         {
-            throw new NotImplementedException();
+            return base.Equals(obj);
         }
 
-        
+        public void AjouterLangueTraduction(string langue)
+        {
+            languesTraduction.Add(langue);
+        }
+
+        public List<string> GetLanguesTraduction()
+        {
+            return languesTraduction;
+        }
+
     }
 }

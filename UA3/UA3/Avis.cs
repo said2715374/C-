@@ -6,7 +6,15 @@ using System.Threading.Tasks;
 
 namespace UA3
 {
-    internal class Avis
+    internal class Avis 
     {
+        public string Commentaire { get; set; }
+        public int Note { get; set; }
+
+        public Avis(string commentaire, int note)
+        {
+            Commentaire = commentaire;
+            Note = note;
+        }
     }
 }

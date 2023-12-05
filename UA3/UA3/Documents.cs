@@ -15,6 +15,7 @@ namespace UA3
         public string DateDexpedition { get; set; }
         public int NumeroCase { get; set; }
         public string Etagere { get; set; }
+        public int Disponible {  get; set; }
 
         public Documents(string titre, string resume, int code, double prix, string dateDexpedition)
         {
@@ -23,7 +24,8 @@ namespace UA3
             Code = code;
             Prix = prix;
             DateDexpedition = dateDexpedition;
-         }
+           
+        }
 
         public override string ToString()
         {
@@ -34,16 +36,15 @@ namespace UA3
         }
 
         public override bool Equals(object? obj)
-        {// Vérifiez si l'objet passé n'est pas null et est du même type que cette instance
+        {
             if (obj == null || GetType() != obj.GetType())
             {
                 return false;
             }
 
-            // Convertissez l'objet passé en instance de Documents pour pouvoir comparer les propriétés
+           
             Documents otherDocument = (Documents)obj;
 
-            // Comparez les valeurs des propriétés pour déterminer l'égalité
             return Titre == otherDocument.Titre &&
            Resume == otherDocument.Resume &&
            Code == otherDocument.Code &&
@@ -58,7 +59,11 @@ namespace UA3
                                "L'étager :" + Etagere + "\n" +
                                "Numéro de case : " + NumeroCase);
         }
-        public abstract bool Disponibilite();
+        public  bool Disponibilite()
+        {
+            if (this.Disponible == 1) { return true; }
+            return false;
+        }
 
         public  void AfficheResume()
         {
