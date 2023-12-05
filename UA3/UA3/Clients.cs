@@ -12,7 +12,7 @@ namespace UA3
         {
             public string Nom { get; set; }
             public string Prenom { get; set; }
-            public DateTime DateEmprunt { get; set; }
+            
 
             public Client(string nom, string prenom, DateTime dateEmprunt)
             {
@@ -22,8 +22,10 @@ namespace UA3
             }
             public override string ToString()
             {
-                return base.ToString();
+                return base.ToString() + "nom : " + nom + "\n" +
+                                    "prenom : " + prenom;
             }
+
 
 
         }
