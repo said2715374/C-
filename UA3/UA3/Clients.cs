@@ -8,5 +8,23 @@ namespace UA3
 {
     internal class Clients
     {
+        public class Client
+        {
+            public string Nom { get; set; }
+            public string Prenom { get; set; }
+            public DateTime DateEmprunt { get; set; }
+
+            public Client(string nom, string prenom, DateTime dateEmprunt)
+            {
+                Nom = nom;
+                Prenom = prenom;
+                DateEmprunt = dateEmprunt;
+            }
+            public override string ToString()
+            {
+                return base.ToString();
+            }
+
+
+        }
     }
-}
