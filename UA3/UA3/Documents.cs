@@ -49,7 +49,9 @@ namespace UA3
            Resume == otherDocument.Resume &&
            Code == otherDocument.Code &&
            Prix == otherDocument.Prix &&
-           DateDexpedition == otherDocument.DateDexpedition;
+           DateDexpedition == otherDocument.DateDexpedition &&
+           NumeroCase == otherDocument.NumeroCase &&
+           Etagere == otherDocument.Etagere;
         }
 
 

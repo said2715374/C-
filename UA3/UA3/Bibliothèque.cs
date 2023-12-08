@@ -8,5 +8,8 @@ namespace UA3
 {
     internal class Bibliothèque
     {
+        public List<Documents> DocumentsListe { get; set; }
+        public List<Clients> Clients { get; set; }
+
     }
 }

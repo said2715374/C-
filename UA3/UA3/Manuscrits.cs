@@ -30,7 +30,13 @@ namespace UA3
         }
         public override bool Equals(object? obj)
         {
-            return base.Equals(obj);
+            if (obj == null || GetType() != obj.GetType())
+            {
+                return false;
+            }
+            Manuscrits otherManuscrits = (Manuscrits)obj;
+            return base.Equals(obj)&&Auteur == otherManuscrits.Auteur&&
+                                    LangueOriginal == otherManuscrits.LangueOriginal;
         }
 
         public void AjouterLangueTraduction(string langue)

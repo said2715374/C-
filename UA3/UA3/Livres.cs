@@ -37,9 +37,7 @@ namespace UA3
             }
 
             Livres otherLivres = (Livres)obj;
-            return base.Equals(obj) &&
-                    NumeroCase == otherLivres.NumeroCase&&
-                    Etagere == otherLivres.Etagere &&
+            return base.Equals(obj)  &&
                     Auteur == otherLivres.Auteur &&
                     NumbreDePage == otherLivres.NumbreDePage ;
         }

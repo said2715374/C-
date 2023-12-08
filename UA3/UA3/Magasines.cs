@@ -32,7 +32,13 @@ namespace UA3
 
        public override bool Equals(object? obj)
         {
-            return base.Equals(obj);
+            if (obj == null || GetType() != obj.GetType())
+            {
+                return false;
+            }
+            Magasines otherMagasines = (Magasines)obj;
+            return base.Equals(obj)&& Categories == otherMagasines.Categories &&
+                                      Article == otherMagasines.Article;
         }
         public void AjouterEvaluationArticle(int evaluation)
         {
