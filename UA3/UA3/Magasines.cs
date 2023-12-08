@@ -13,13 +13,15 @@ namespace UA3
 
         public string Categories { get; set; }
         public string Article {  get; set; }
+        public List<int> evaluationsArticles = new List<int>();
 
         public Magasines(string titre, string resume, int code, double prix, string dateDexpedition, string etager, int Case,string categories, string article) : base(titre, resume, code, prix, dateDexpedition)
         {
             this.NumeroCase = Case;
             this.Etagere = etager;
-            this.Categories = categories;
-            this.Article = article;
+            Categories = categories;
+            Article = article;
+            this.Disponible = 1;
         }
 
         public override string ToString()
@@ -28,19 +30,33 @@ namespace UA3
                                     "Article : "+Article;
         }
 
-        public override void AfficheResume()
+       public override bool Equals(object? obj)
         {
-            throw new NotImplementedException();
+            if (obj == null || GetType() != obj.GetType())
+            {
+                return false;
+            }
+            Magasines otherMagasines = (Magasines)obj;
+            return base.Equals(obj)&& Categories == otherMagasines.Categories &&
+                                      Article == otherMagasines.Article;
+        }
+        public void AjouterEvaluationArticle(int evaluation)
+        {
+            evaluationsArticles.Add(evaluation);
         }
 
-        public override bool Disponibilite()
+        public double CalculerMoyenneEvaluationsArticles()
         {
-            throw new NotImplementedException();
+            if (evaluationsArticles.Count == 0)
+                return 0;
+
+            return evaluationsArticles.Average();
         }
 
-        public override void Emplacement()
-        {
-            throw new NotImplementedException();
+          public List<int> GetEvaluationsArticles()
+            {
+                return evaluationsArticles;
+            }
         }
     }
-}
+
